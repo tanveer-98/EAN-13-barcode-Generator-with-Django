@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>EAN-13 Barcode Generator</h1>
+    <form  action='{%url 'ind' %}' method="post">
+      {%csrf_token%}
+      <label for="name">Enter the name of the Barcode:</label>
+      <input type="text" name="name" >
+      <br>
+      <label for="countryid">COUNTRY ID:</label>
+      <input type="text" name="countryid" >
+      <br>
+      <label for="manufacturercode">6-Digit MANUFACTURER CODE:</label>
+      <input type="text" name="manufacturercode" >
+      <br>
+      <label for="productcode">5-Digit PRODUCT CODE</label>
+      <input type="text" name="productcode" >
+      <br>
+      <input type="submit" name="submit" value="ENTER">
+    </form>
+
+
+    <img src='/media/images/{{name}}.png' alt="NO image found">
+  </body>
+</html>
